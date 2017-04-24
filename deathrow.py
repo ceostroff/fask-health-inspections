@@ -11,8 +11,8 @@ def get_names(source):
         id = row["id"]
         name = row["name"]
         photo = row["photo"]
-        names.append([id, name])
-    return names, photo
+        names.append([id, name, photo])
+    return names
 
 # get the information for each ID
 def get_inmatedata(source, id):
@@ -33,8 +33,8 @@ def get_inmatedata(source, id):
 @app.route('/')
 @app.route('/inmates.html')
 def inmates():
-    names, photo = get_names(ROSTER)
-    return render_template('inmates.html', pairs=names, photo=photo)
+    names = get_names(ROSTER)
+    return render_template('inmates.html', pairs=names)
 
 
 

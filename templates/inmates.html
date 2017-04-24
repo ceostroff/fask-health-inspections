@@ -19,7 +19,7 @@
 {% for pair in pairs %}
 
     <div class="inmateList">
-        <div><a href="{{ url_for('inmate', id=pair[0]) }}">  <img src="{{ url_for('static', filename='mugshots/' + photo) }}" width="150" height="200"/> </div>
+        <div><a href="{{ url_for('inmate', id=pair[0]) }}"><img src="{{ url_for('static', filename='mugshots/' + pair[2]) }}" width="150" height="200"></a></div>
 <p >{{ pair[1] }}</p>
    
 </div>
